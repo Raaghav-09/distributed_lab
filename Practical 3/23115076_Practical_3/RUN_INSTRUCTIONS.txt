@@ -1,0 +1,71 @@
+RUN INSTRUCTIONS - CONCURRENT DAY-TIME CLIENT-SERVER APPLICATION
+=================================================================
+
+REQUIREMENTS
+------------
+- Java Development Kit (JDK) 8 or later
+- Two or more terminal windows
+
+VERIFY JAVA INSTALLATION
+------------------------
+Run these commands in a terminal:
+
+java -version
+javac -version
+
+COMPILE THE PROGRAM
+-------------------
+1. Open a terminal in this project folder.
+2. Compile the server and client:
+
+javac -d out src/Server_DT.java src/Client_DT.java
+
+This creates the compiled files in the out folder.
+
+RUN THE SERVER
+--------------
+1. In the first terminal, run:
+
+java -cp out Server_DT
+
+2. The server starts on port 5000 and waits for clients.
+3. Stop the server with Ctrl+C.
+
+RUN THE CLIENT
+--------------
+1. Open a second terminal in the same project folder.
+2. Run:
+
+java -cp out Client_DT
+
+3. The client sends its IP address and displays the date and time returned by the server.
+
+TEST CONCURRENCY
+----------------
+Open additional terminals and run the client command again:
+
+java -cp out Client_DT
+
+The server can process multiple client connections concurrently.
+
+USING A DIFFERENT PORT
+----------------------
+If port 5000 is already in use, choose another port such as 5051.
+
+Terminal 1 - server:
+
+java -cp out Server_DT 5051
+
+Terminal 2 - client:
+
+java -cp out Client_DT localhost 5051
+
+CONNECTING FROM ANOTHER COMPUTER
+--------------------------------
+1. Start the server on the server computer.
+2. Find that computer's local IP address.
+3. On the client computer, run (replace the IP address as needed):
+
+java -cp out Client_DT 192.168.1.10 5000
+
+Ensure the selected TCP port is allowed by the server computer's firewall.

@@ -1,0 +1,30 @@
+================ SERVER ================
+Starting Concurrent Echo Server...
+Server is running on port 1234
+Waiting for clients...
+Client connected: /127.0.0.1:53101
+Client connected: /127.0.0.1:53102
+[pool-1-thread-1] /127.0.0.1:53101 -> Hello from Client 1
+[pool-1-thread-2] /127.0.0.1:53102 -> Hello from Client 2
+[pool-1-thread-1] /127.0.0.1:53101 -> exit
+Client disconnected: /127.0.0.1:53101
+[pool-1-thread-2] /127.0.0.1:53102 -> exit
+Client disconnected: /127.0.0.1:53102
+
+================ CLIENT 1 ================
+Connected to Echo Server at localhost:1234
+Type 'exit' to close the client.
+
+Enter message: Hello from Client 1
+Server echoed: Hello from Client 1
+Enter message: exit
+Server echoed: exit
+
+================ CLIENT 2 ================
+Connected to Echo Server at localhost:1234
+Type 'exit' to close the client.
+
+Enter message: Hello from Client 2
+Server echoed: Hello from Client 2
+Enter message: exit
+Server echoed: exit

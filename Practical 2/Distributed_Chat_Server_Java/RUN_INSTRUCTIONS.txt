@@ -1,0 +1,35 @@
+DISTRIBUTED CHAT SERVER - RUN INSTRUCTIONS
+
+1. Make sure Java JDK is installed.
+
+2. Open Terminal / Command Prompt.
+
+3. Go to the src folder:
+   cd src
+
+4. Compile both files:
+   javac ChatServer.java ChatClient.java
+
+5. Start the server:
+   java ChatServer
+
+6. Open another terminal and go to the src folder again.
+
+7. Start a client:
+   java ChatClient
+
+8. Start ChatClient in more terminals/windows to test multiple users.
+
+9. Enter different usernames and send messages.
+
+Note:
+The client is configured to connect to localhost on port 5050.
+Port 5000 is avoided because macOS commonly uses it for AirPlay Receiver.
+To use another computer or port, pass them when starting the client:
+   java ChatClient <server-ip> <port>
+For example:
+   java ChatClient 192.168.1.10 5051
+
+If port 5050 is already in use, start both programs with the same free port:
+   java ChatServer 5051
+   java ChatClient localhost 5051
